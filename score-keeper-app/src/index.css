@@ -1,0 +1,73 @@
+.screen {
+  background-color: #00498c;
+}
+
+h1 {
+  color: white;
+  justify-self: center;
+  margin: 0em;
+}
+
+#new-game-btn {
+  background-color: yellow;
+  border-radius: 8px 8px 8px 8px;
+  justify-self: end;
+  width: 7em;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+
+#scoreboard-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 0.15em solid white;
+  border-bottom: 0.15em solid white;
+}
+
+#left-scoreboard {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  border-right: 0.15em solid white;
+  /* border: 0.3em solid white; */
+  height: 10em;
+}
+
+#right-scoreboard {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  border-left: 0.15em solid white;
+  /* border: 0.3em solid white; */
+  height: 10em;
+}
+
+#footer {
+  background-attachment: #00498c;
+  height: 3em;
+}
+
+input {
+  background-color: #00498c;
+  color: white;
+  text-align: center;
+  font-size: x-large;
+  border: 0em;
+}
+
+#left-counter-btn {
+  font-size: 7em;
+  color: white;
+  background-color: #00498c;
+  border: 0em;
+  margin: 0em;
+}
+
+#right-counter-btn {
+  font-size: 7em;
+  color: white;
+  background-color: #00498c;
+  border: 0em;
+  margin: 0em;
+}
