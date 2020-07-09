@@ -8,24 +8,22 @@ function App() {
   const [playerOneName, setPlayerOneName] = React.useState("Home");
   const [playerTwoName, setPlayerTwoName] = React.useState("Visitor");
 
-  const incrementPlayerScore = (playerName) => {
-    if (playerName === playerOneName) {
-      var scoreIncrement = playerOneScore + 1;
-      setPlayerOneScore(scoreIncrement);
-    } else {
-      var scoreIncrement = playerTwoScore + 1;
-      setPlayerTwoScore(scoreIncrement);
-    }
-    if (scoreIncrement >= 21) {
-      alert(`${playerName} wins!`);
-      resetBoard()
-    }
-  }
-
   const resetBoard = () => {
     setPlayerOneScore(0);
     setPlayerTwoScore(0);
   }
+
+  React.useEffect(() => {
+    // can only with after reaching 21 points, and must win by a 2 point difference
+    if (playerOneScore > 20 && (playerOneScore - playerTwoScore) > 1) {
+      alert(`${playerOneName} wins!`);
+      resetBoard()
+    }
+    else if (playerTwoScore > 20 && (playerTwoScore - playerOneScore) > 1) {
+      alert(`${playerTwoName} wins!`);
+      resetBoard()
+    }
+  });
 
   return (
     <div className="screen">
@@ -35,18 +33,23 @@ function App() {
       </header>
 
       <div id="scoreboard-container">
-        <div id="left-scoreboard">
-          <input onChange={(e) => setPlayerOneName(e.target.value)} type="text" value={playerOneName} for="player-one-name"></input>
-          <button id="left-counter-btn" onClick={() => incrementPlayerScore(playerOneName)}>{playerOneScore}</button>
+        <div className="scoreboard">
+          <input className="item1" onChange={(e) => setPlayerOneName(e.target.value)} type="text" value={playerOneName} htmlFor="player-one-name"></input>
+          <button className="item2 counter-btn" onClick={() => setPlayerOneScore(playerOneScore - 1)}></button>
+          <div className="item3 player-score">{playerOneScore}</div>
+          <button className="item4 counter-btn" onClick={() => setPlayerOneScore(playerOneScore + 1)}></button>
         </div>
 
-        <div id="right-scoreboard">
-          <input onChange={(e) => setPlayerTwoName(e.target.value)} type="text" value={playerTwoName} for="player-one-name"></input>
-          <button id="right-counter-btn" onClick={() => incrementPlayerScore(playerTwoName)}>{playerTwoScore}</button>
+        <div className="scoreboard">
+          <input className="item1" onChange={(e) => setPlayerTwoName(e.target.value)} type="text" value={playerTwoName} htmlFor="player-one-name"></input>
+          <button className="item2 counter-btn" onClick={() => setPlayerTwoScore(playerTwoScore - 1)}></button>
+          <div className="item3 player-score">{playerTwoScore}</div>
+          <button className="item4 counter-btn" onClick={() => setPlayerTwoScore(playerTwoScore + 1)}></button>
         </div>
       </div>
 
-      <div id="footer"></div>
+      <div id="footer">
+      </div>
     </div>
   );
 }
