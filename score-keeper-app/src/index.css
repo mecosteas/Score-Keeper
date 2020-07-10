@@ -19,6 +19,7 @@ h1 {
 header {
   display: grid;
   grid-template-columns: 9fr 1fr;
+  background-color: #00498c;
 }
 
 #scoreboard-container {
@@ -27,6 +28,7 @@ header {
   grid-template-columns: 1fr 1fr;
   border-top: 0.15em solid white;
   border-bottom: 0.15em solid white;
+  border-right: 0px;
 }
 
 #right-scoreboard {
@@ -38,7 +40,7 @@ header {
 }
 
 #footer {
-  background-attachment: #00498c;
+  background-color: #00498c;
   height: 3em;
 }
 
@@ -97,7 +99,17 @@ button:focus {
     "leftButton leftButton score score rightButton rightButton";
   grid-template-rows: 1fr 2fr;
   /* grid-template-columns: 1fr 1fr 1fr; */
-  border-right: 0.15em solid white;
   height: 10em;
   background-color: #00498c;
+}
+
+#left-scoreboard-right-btn {
+  border-right: 0.15em solid white;
+  padding: 0px;
+}
+
+#left-scoreboard-left-player {
+  border-right: 0.075em solid white;
+  padding: 0px;
+  margin: 0px;
 }

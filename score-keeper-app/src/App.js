@@ -34,10 +34,10 @@ function App() {
 
       <div id="scoreboard-container">
         <div className="scoreboard">
-          <input className="item1" onChange={(e) => setPlayerOneName(e.target.value)} type="text" value={playerOneName} htmlFor="player-one-name"></input>
+          <input id="left-scoreboard-left-player" className="item1" onChange={(e) => setPlayerOneName(e.target.value)} type="text" value={playerOneName} htmlFor="player-one-name"></input>
           <button className="item2 counter-btn" onClick={() => setPlayerOneScore(playerOneScore - 1)}></button>
           <div className="item3 player-score">{playerOneScore}</div>
-          <button className="item4 counter-btn" onClick={() => setPlayerOneScore(playerOneScore + 1)}></button>
+          <button id="left-scoreboard-right-btn" className="item4 counter-btn" onClick={() => setPlayerOneScore(playerOneScore + 1)}></button>
         </div>
 
         <div className="scoreboard">
